@@ -13,4 +13,4 @@ contract Ex_01 is B {
     function bar() public override pure returns (uint) { return 2; }
 }
 
-// Q: What is the outcome of c.main()?
+// Q: What is the outcome of Ex_01.main()?
