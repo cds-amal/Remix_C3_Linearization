@@ -3,9 +3,9 @@ pragma solidity ^0.8.20;
 
 contract A {
     function foo() public         pure returns (uint) { 
-      // [2] bar does not exist in A, so it will try to find it in the
-      // parent contracts following the linearization order: A -> B -> Ex_01,
-      // which leads to Ex_01::bar().
+      // [2] bar is an overridden function and its use is ambiguous in A, 
+      // so it will try to find it in the parent contracts following the
+      // linearization order: Ex_01 -> B -> A, which leads to Ex_01::bar().
       return bar(); 
     }
 
